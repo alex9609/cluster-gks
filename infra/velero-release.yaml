@@ -78,7 +78,7 @@ spec:
     #       labelSelector:
     #         matchExpressions:
     #           - { key: kubernetes.azure.com/managedby, operator: NotIn, values: [aks] }
-    schedules: {}
+    #schedules: {}
     resources: {}
       # requests:
       #   cpu: 500m
