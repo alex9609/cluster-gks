@@ -1,0 +1,55 @@
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: velero-release
+  namespace: velero
+spec:
+  interval: 5m
+  timeout: 5m
+  chart:
+    spec:
+      chart: velero
+      version: '7.2.1'
+      sourceRef:
+        kind: HelmRepository
+        name: velero-respository
+      interval: 5m
+  releaseName: velero
+  install:
+    remediation:
+      retries: 3
+  upgrade:
+    remediation:
+      retries: 3
+  values:
+    credentials:
+      existingSecret: credentials-azure
+    configuration:
+      uploaderType: restic
+      backupStorageLocation:
+        - name: backup
+          provider: azure
+          bucket: velero
+          config:
+            resourceGroup: "Velero_Backups"
+            subscriptionId: 0add8ab3-5fd9-4280-a521-90e6c533effa
+            storageAccount: velerobe8f2c98e0a4
+            storageAccountKeyEnvVar: AZURE_STORAGE_ACCOUNT_ACCESS_KEY
+            #publicUrl: 
+      volumeSnapshotLocation:
+        - name: snapshot
+          provider: azure
+          config:
+            region: westus
+            subscriptionId: 0add8ab3-5fd9-4280-a521-90e6c533effa
+      defaultBackupStorageLocation: backup
+    initContainers:
+      - name: velero-plugin-for-microsoft-azure
+        image: velero/velero-plugin-for-microsoft-azure:v1.10.0
+        imagePullPolicy: IfNotPresent
+        volumeMounts:
+          - mountPath: /target
+            name: plugins
+    deployNodeAgent: true
+    snapshotsEnabled: false
