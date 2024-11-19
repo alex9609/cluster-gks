@@ -38,6 +38,7 @@ spec:
             storageAccount: velerobe8f2c98e0a4
             storageAccountKeyEnvVar: AZURE_STORAGE_ACCOUNT_ACCESS_KEY
             #publicUrl: 
+      defaultVolumesToFsBackup: true
       volumeSnapshotLocation:
         - name: snapshot
           provider: azure
@@ -54,8 +55,7 @@ spec:
             name: plugins
     deployNodeAgent: true
     snapshotsEnabled: false
-    schedules:
-      defaultVolumesToFsBackup: true
+    #schedules:
     #   mybackup:
     #     disabled: false
     #     labels:
@@ -78,7 +78,7 @@ spec:
     #       labelSelector:
     #         matchExpressions:
     #           - { key: kubernetes.azure.com/managedby, operator: NotIn, values: [aks] }
-    #schedules: {}
+    schedules: {}
     resources: {}
       # requests:
       #   cpu: 500m
