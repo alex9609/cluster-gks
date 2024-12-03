@@ -6,4 +6,3 @@ resources:
   - vmware-tanzu.yaml
   - credentials-azure.yaml
   - velero-release.yaml
-  - harbor.yaml
