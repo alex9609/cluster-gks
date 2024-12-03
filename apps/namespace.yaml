@@ -1,6 +1,4 @@
 apiVersion: v1
 kind: Namespace
 metadata:
-  name: app-data
-  labels:
-    name: app-data
+  name: registry

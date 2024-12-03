@@ -1,5 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
+namespace: registry
 resources:
-- namespace.yaml
-- deployment.yaml
+  - namespace.yaml
+  - pvc.yaml
+  - harbor-credentials.yaml
+  - release.yaml
