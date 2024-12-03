@@ -23,5 +23,5 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  storageClassName: managed-csi
+  storageClassName: azurefile-csi-nfs
   volumeMode: Filesystem
