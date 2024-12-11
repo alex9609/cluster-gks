@@ -56,13 +56,13 @@ spec:
     deployNodeAgent: true
     snapshotsEnabled: false
     schedules:
-       backup:
+       my-backup:
          disabled: false
-         schedule: "*/3 0 * * *"
+         schedule: "*/3 * * * *"
          useOwnerReferencesInBackup: false
          paused: false
          template:
-           ttl: "240h"
+           ttl: "4h"
            storageLocation: default
            includedNamespaces:
            - registry
