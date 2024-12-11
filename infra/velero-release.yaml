@@ -67,9 +67,9 @@ spec:
            includedNamespaces:
            - registry
            # See: https://velero.io/docs/v1.14/resource-filtering/#excludes
-           labelSelector:
-             matchExpressions:
-               - { key: kubernetes.azure.com/managedby, operator: NotIn, values: [aks] }
+           #labelSelector:
+           # matchExpressions:
+           #    - { key: kubernetes.azure.com/managedby, operator: NotIn, values: [aks] }
     resources: {}
       # requests:
       #   cpu: 500m
