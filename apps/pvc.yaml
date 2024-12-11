@@ -9,7 +9,7 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  storageClassName: azurefile-csi-nfs
+  storageClassName: local-path
   volumeMode: Filesystem
 ---
 apiVersion: v1
