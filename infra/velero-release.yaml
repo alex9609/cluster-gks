@@ -58,7 +58,7 @@ spec:
     schedules:
        my-backup:
          disabled: false
-         schedule: "*/3 * * * *"
+         schedule: "* */3 * * *"
          useOwnerReferencesInBackup: false
          paused: false
          template:
