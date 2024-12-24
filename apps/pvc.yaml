@@ -9,7 +9,7 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  storageClassName: local-path
+  storageClassName: nfs-csi
   volumeMode: Filesystem
 ---
 apiVersion: v1
@@ -23,5 +23,5 @@ spec:
   resources:
     requests:
       storage: 5Gi
-  storageClassName: local-path
+  storageClassName: nfs-csi
   volumeMode: Filesystem
