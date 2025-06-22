@@ -1,0 +1,43 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: harbor
+spec:
+  releaseName: harbor
+  chart:
+    spec:
+      chart: harbor
+      sourceRef:
+        kind: HelmRepository
+        name: harbor
+        name: registry-once
+      version: ">=1.13.1"
+  timeout: 10m
+  install:
+    remediation:
+      retries: -1
+  interval: 24h0m0s
+  values:
+    persistence:
+      persistentVolumeClaim:
+        registry:
+          existingClaim: registry-pvc
+          subPath: registry
+        jobservice:
+          jobLog:
+            existingClaim: registry-pvc
+            subPath: jobservice
+        database:
+          existingClaim: registry-db-pvc
+          subPath: database
+        redis:
+          existingClaim: registry-pvc
+          subPath: redis
+        trivy:
+          existingClaim: registry-pvc
+          subPath: trivy
+
+    logLevel: info
+    existingSecretAdminPassword: "harbor-credentials"
+    existingSecretAdminPasswordKey: HARBOR_ADMIN_PASSWORD
+    secretkey: HARBOR_SECRET_KEY
