@@ -17,4 +17,4 @@ patches:
         value: --watch-all-namespaces=false
     target:
       kind: Deployment
-      name: "source-controller"
+      name: source-controller
