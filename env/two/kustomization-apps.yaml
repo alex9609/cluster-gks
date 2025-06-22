@@ -6,7 +6,7 @@ metadata:
   namespace: two
 spec:
   interval: 1m0s
-  path: ./apps
+  path: ./apps-once
   prune: true
   sourceRef:
     kind: GitRepository
