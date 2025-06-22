@@ -24,56 +24,56 @@ spec:
     remediation:
       retries: 3
   values:
-    credentials:
-      existingSecret: credentials-azure
-    configuration:
-      uploaderType: restic
-      backupStorageLocation:
-        - name: backup
-          provider: azure
-          bucket: velero
-          config:
-            resourceGroup: "Velero_Backups"
-            subscriptionId: 0add8ab3-5fd9-4280-a521-90e6c533effa
-            storageAccount: velerobe8f2c98e0a4
-            storageAccountKeyEnvVar: AZURE_STORAGE_ACCOUNT_ACCESS_KEY
-            #publicUrl: 
-      defaultVolumesToFsBackup: true
-      volumeSnapshotLocation:
-        - name: snapshot
-          provider: azure
-          config:
-            region: westus
-            subscriptionId: 0add8ab3-5fd9-4280-a521-90e6c533effa
-      defaultBackupStorageLocation: backup
-    initContainers:
-      - name: velero-plugin-for-microsoft-azure
-        image: velero/velero-plugin-for-microsoft-azure:v1.10.0
-        imagePullPolicy: IfNotPresent
-        volumeMounts:
-          - mountPath: /target
-            name: plugins
-    deployNodeAgent: true
-    snapshotsEnabled: false
-    #schedules:
-    #   my-backup:
-    #     disabled: false
-    #     schedule: "0 0 * * 6"
-    #     useOwnerReferencesInBackup: false
-    #     paused: false
-    #     template:
-    #       ttl: "4h"
-    #       storageLocation: backup
-    #       includedNamespaces:
-    #       - registry
-    #       # See: https://velero.io/docs/v1.14/resource-filtering/#excludes
-    #       labelSelector:
-    #        matchExpressions:
-    #           - { key: kubernetes.azure.com/managedby, operator: NotIn, values: [aks] }
-    resources: {}
-      # requests:
-      #   cpu: 500m
-      #   memory: 128Mi
-      # limits:
-      #   cpu: 1000m
-      #   memory: 512Mi
+    # credentials:
+    #   existingSecret: credentials-azure
+    # configuration:
+    #   uploaderType: restic
+    #   backupStorageLocation:
+    #     - name: backup
+    #       provider: azure
+    #       bucket: velero
+    #       config:
+    #         resourceGroup: "Velero_Backups"
+    #         subscriptionId: 0add8ab3-5fd9-4280-a521-90e6c533effa
+    #         storageAccount: velerobe8f2c98e0a4
+    #         storageAccountKeyEnvVar: AZURE_STORAGE_ACCOUNT_ACCESS_KEY
+    #         #publicUrl: 
+    #   defaultVolumesToFsBackup: true
+    #   volumeSnapshotLocation:
+    #     - name: snapshot
+    #       provider: azure
+    #       config:
+    #         region: westus
+    #         subscriptionId: 0add8ab3-5fd9-4280-a521-90e6c533effa
+    #   defaultBackupStorageLocation: backup
+    # initContainers:
+    #   - name: velero-plugin-for-microsoft-azure
+    #     image: velero/velero-plugin-for-microsoft-azure:v1.10.0
+    #     imagePullPolicy: IfNotPresent
+    #     volumeMounts:
+    #       - mountPath: /target
+    #         name: plugins
+    # deployNodeAgent: true
+    # snapshotsEnabled: false
+    # #schedules:
+    # #   my-backup:
+    # #     disabled: false
+    # #     schedule: "0 0 * * 6"
+    # #     useOwnerReferencesInBackup: false
+    # #     paused: false
+    # #     template:
+    # #       ttl: "4h"
+    # #       storageLocation: backup
+    # #       includedNamespaces:
+    # #       - registry
+    # #       # See: https://velero.io/docs/v1.14/resource-filtering/#excludes
+    # #       labelSelector:
+    # #        matchExpressions:
+    # #           - { key: kubernetes.azure.com/managedby, operator: NotIn, values: [aks] }
+    # resources: {}
+    #   # requests:
+    #   #   cpu: 500m
+    #   #   memory: 128Mi
+    #   # limits:
+    #   #   cpu: 1000m
+    #   #   memory: 512Mi
