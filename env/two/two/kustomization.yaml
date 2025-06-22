@@ -10,11 +10,11 @@ patches:
         value: --no-cross-namespace-refs=true      
     target:
       kind: Deployment
-      name: "(kustomize-controller|helm-controller|notification-controller|source-controller)"
+      name: "(kustomize-controller|helm-controller|notification-controller)"
   - patch: |
       - op: add
         path: /spec/template/spec/containers/0/args/-
-        value: --no-cross-namespace-refs=true      
+        value: --watch-all-namespaces=false     
     target:
       kind: Deployment
       name: "(source-controller)"
