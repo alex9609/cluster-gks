@@ -16,7 +16,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: registry-db-pvc
-  name: registry-once
+  namespace: registry-once
 spec:
   accessModes:
     - ReadWriteOnce
