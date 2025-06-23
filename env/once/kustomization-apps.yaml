@@ -5,12 +5,12 @@ metadata:
   name: kustom-app-once
   namespace: once
 spec:
-  interval: 1m0s
+  interval: 0m30s
   path: ./apps-once
   prune: true
   sourceRef:
     kind: GitRepository
     name: once
     namespace: once
-  timeout: 5m0s
+  timeout: 0m30s
   wait: true

@@ -5,12 +5,12 @@ metadata:
   name: kustom-app-two
   namespace: two
 spec:
-  interval: 1m0s
+  interval: 0m30s
   path: ./apps-two
   prune: true
   sourceRef:
     kind: GitRepository
     name: two
     namespace: two
-  timeout: 5m0s
+  timeout: 0m30s
   wait: true
