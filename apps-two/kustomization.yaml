@@ -3,7 +3,7 @@ kind: Kustomization
 namespace: registry-two
 resources:
   - namespace.yaml
-  #- harbor.yaml
+  - harbor.yaml
   #- pvc.yaml
   - harbor-credentials.yaml
   #- release.yaml
