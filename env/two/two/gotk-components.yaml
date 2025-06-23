@@ -10493,7 +10493,7 @@ spec:
       containers:
       - args:
         - --events-addr=http://notification-controller.two.svc.cluster.local./
-        - --watch-all-namespaces=true # Change to true
+        - --watch-all-namespaces=true # Change to true - reconcile everyone HelmRelease
         - --log-level=info
         - --log-encoding=json
         - --enable-leader-election
