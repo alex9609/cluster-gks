@@ -10,7 +10,7 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: harbor
-        namespace: registry
+        namespace: apps-two
       version: ">=1.13.1"
   timeout: 10m
   install:
