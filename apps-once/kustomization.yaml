@@ -1,9 +1,8 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
-name: registry-once
 resources:
   - namespace.yaml
-  - harbor.yaml
-  - pvc.yaml
-  - harbor-credentials.yaml
-  - release.yaml
+  #- harbor.yaml
+  #- pvc.yaml
+  #- harbor-credentials.yaml
+  #- release.yaml
