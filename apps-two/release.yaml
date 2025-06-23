@@ -18,24 +18,24 @@ spec:
       retries: -1
   interval: 24h0m0s
   values:
-    persistence:
-      persistentVolumeClaim:
-        registry:
-          existingClaim: registry-pvc
-          subPath: registry
-        jobservice:
-          jobLog:
-            existingClaim: registry-pvc
-            subPath: jobservice
-        database:
-          existingClaim: registry-db-pvc
-          subPath: database
-        redis:
-          existingClaim: registry-pvc
-          subPath: redis
-        trivy:
-          existingClaim: registry-pvc
-          subPath: trivy
+    # persistence:
+    #   persistentVolumeClaim:
+    #     registry:
+    #       existingClaim: registry-pvc
+    #       subPath: registry
+    #     jobservice:
+    #       jobLog:
+    #         existingClaim: registry-pvc
+    #         subPath: jobservice
+    #     database:
+    #       existingClaim: registry-db-pvc
+    #       subPath: database
+    #     redis:
+    #       existingClaim: registry-pvc
+    #       subPath: redis
+    #     trivy:
+    #       existingClaim: registry-pvc
+    #       subPath: trivy
 
     logLevel: info
     existingSecretAdminPassword: "harbor-credentials"
