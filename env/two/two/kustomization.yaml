@@ -8,7 +8,7 @@ patches:
       - op: add
         path: /spec/template/spec/containers/0/args/-
         value: --no-cross-namespace-refs=true  
-      - op: replace
+      - op: add
         path: /spec/template/spec/containers/0/args/-
         value: --watch-all-namespaces=true      
     target:
