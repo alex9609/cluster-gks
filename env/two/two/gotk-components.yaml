@@ -10493,7 +10493,7 @@ spec:
       containers:
       - args:
         - --events-addr=http://notification-controller.two.svc.cluster.local./
-        - --watch-all-namespaces=false
+        - --watch-all-namespaces=true # Change to true
         - --log-level=info
         - --log-encoding=json
         - --enable-leader-election
