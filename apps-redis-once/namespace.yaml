@@ -3,4 +3,4 @@ kind: Namespace
 metadata:
   name: redis-once
   labels:
-    env: two
+    env: once
