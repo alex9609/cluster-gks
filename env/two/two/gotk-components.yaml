@@ -10497,6 +10497,7 @@ spec:
         - --log-level=info
         - --log-encoding=json
         - --enable-leader-election
+        - --watch-label-selector=env=two # Put the selector namespace
         env:
         - name: RUNTIME_NAMESPACE
           valueFrom:
