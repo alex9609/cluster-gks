@@ -4,4 +4,4 @@ kind: Kustomization
 namespace: redis-three 
 resources:
   - namespace.yaml
-  #- ../apps-redis-two
+  - ../apps-redis-two
