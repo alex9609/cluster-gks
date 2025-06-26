@@ -1,0 +1,16 @@
+# temporal to delete
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: redis
+  namespace: redis-once
+  labels:
+    env: once
+    release: prometheus
+spec:
+  interval: 10m
+  chartRef:
+    kind: OCIRepository
+    name: bitnami
+    namespace: redis-once
+  values:
