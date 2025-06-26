@@ -6,7 +6,7 @@ metadata:
   name: two
   namespace: two
 spec:
-  interval: 1m0s
+  interval: 0m30s
   ref:
     branch: testing
   secretRef:
@@ -19,7 +19,7 @@ metadata:
   name: two
   namespace: two
 spec:
-  interval: 10m0s
+  interval: 0m30s
   path: ./env/two
   prune: true
   sourceRef:
