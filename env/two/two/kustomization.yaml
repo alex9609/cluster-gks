@@ -10,4 +10,4 @@ patches:
         value: --watch-label-selector=env=two   
     target:
       kind: Deployment
-      name: "(kustomize-controller|helm-controller|source-controller)"
+      name: "(helm-controller)"

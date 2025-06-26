@@ -3,6 +3,8 @@ kind: HelmRelease
 metadata:
   name: harbor
   namespace: registry-two
+  labels:
+    env: two
 spec:
   releaseName: harbor
   chart:
