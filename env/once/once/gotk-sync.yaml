@@ -6,7 +6,7 @@ metadata:
   name: once
   namespace: once
 spec:
-  interval: 0m30s
+  interval: 1m0s
   ref:
     branch: testing
   secretRef:
@@ -19,7 +19,7 @@ metadata:
   name: once
   namespace: once
 spec:
-  interval: 0m30s
+  interval: 10m0s
   path: ./env/once
   prune: true
   sourceRef:
